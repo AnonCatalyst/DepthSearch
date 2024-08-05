@@ -176,7 +176,7 @@ def main():
     time.sleep(1.3)
 
     # Get user inputs
-    query = input(f"n/{ConsoleConfig.BOLD}Enter the query: {ConsoleConfig.END}").strip()
+    query = input(f"\n{ConsoleConfig.BOLD}Enter the query: {ConsoleConfig.END}").strip()
     amount_str = input(f"{ConsoleConfig.BOLD}Enter the number of results to retrieve (default: 25): {ConsoleConfig.END}").strip()
     use_proxy_str = input(f"{ConsoleConfig.BOLD}Use proxy for increased anonymity? (y/n): {ConsoleConfig.END}").strip().lower()
 
