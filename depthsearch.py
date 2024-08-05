@@ -176,9 +176,9 @@ def main():
     time.sleep(1.3)
 
     # Get user inputs
-    query = input(f"{ConsoleConfig.BOLD}Enter the keyword or string to search on the deep web: {ConsoleConfig.END}").strip()
-    amount_str = input(f"{ConsoleConfig.BOLD}Enter the number of results to retrieve (default: 10): {ConsoleConfig.END}").strip()
-    use_proxy_str = input(f"{ConsoleConfig.BOLD}Use proxy for increased anonymity? (yes/no): {ConsoleConfig.END}").strip().lower()
+    query = input(f"n/{ConsoleConfig.BOLD}Enter the query: {ConsoleConfig.END}").strip()
+    amount_str = input(f"{ConsoleConfig.BOLD}Enter the number of results to retrieve (default: 25): {ConsoleConfig.END}").strip()
+    use_proxy_str = input(f"{ConsoleConfig.BOLD}Use proxy for increased anonymity? (y/n): {ConsoleConfig.END}").strip().lower()
 
     # Set defaults
     amount = 10
@@ -189,7 +189,7 @@ def main():
         amount = int(amount_str)
 
     if query:
-        print(f"{ConsoleConfig.BOLD}Searching For:{Fore.BLUE} {query} and showing {amount} results...\n{ConsoleConfig.END}")
+        print(f"{ConsoleConfig.BOLD}Searching For:{Fore.GREEN} {query} and showing {amount} results...\n{ConsoleConfig.END}")
         Config.USE_PROXY = use_proxy
         DepthSearch().search(query, amount)
     else:
