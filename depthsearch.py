@@ -181,7 +181,7 @@ def main():
     use_proxy_str = input(f"{ConsoleConfig.BOLD}Use proxy for increased anonymity? (y/n): {ConsoleConfig.END}").strip().lower()
 
     # Set defaults
-    amount = 10
+    amount = 25
     use_proxy = use_proxy_str in ['yes', 'y']
 
     # Validate amount
