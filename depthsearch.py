@@ -16,7 +16,7 @@ sys.dont_write_bytecode = True
 
 
 class ConsoleConfig:
-    # Console colors and styles
+    # Console styles
     BOLD = Style.BRIGHT
     END = Style.RESET_ALL
 
