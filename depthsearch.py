@@ -27,10 +27,6 @@ class Config:
     MIN_DATA_RETRIEVE_LENGTH = 1
     USE_PROXY = False
 
-    descriptions = []
-    urls = []
-    titles = []
-
     SEARCH_ENGINE_URL = "https://ahmia.fi/search/?q="
     PROXY_API_URLS = [
         "https://api.proxyscrape.com/v2/?request=displayproxies&protocol=http&timeout=10000&country=all&ssl=all&anonymity=elite",
@@ -132,19 +128,15 @@ class DepthSearch:
 
                 titles = [item.find('p').text if item.find('p') else None for item in result_items]
                 urls = [item.find('cite').text if item.find('cite') else None for item in result_items]
-                descriptions = [item.find('p').text if item.find('p') else None for item in result_items]
 
                 if len(urls) >= Config.MIN_DATA_RETRIEVE_LENGTH:
                     for i in range(len(urls)):
                         url = urls[i]
-                        title = titles[i]
-                        description = descriptions[i]
+                        title = titles[i] if i < len(titles) else None
 
                         output = f"{ConsoleConfig.BOLD}{Fore.LIGHTGREEN_EX}URL:{Fore.WHITE} {url}\n"
-                        if title:
+                        if title:  # Only print if title is available
                             output += f"\t{ConsoleConfig.BOLD}Title:{Fore.LIGHTBLUE_EX} {title}\n"
-                        if description:
-                            output += f"\t{ConsoleConfig.BOLD}Description:{Fore.LIGHTCYAN_EX} {description}\n"
                         output += ConsoleConfig.END
                         print(output)
                         results_found += 1
