@@ -135,7 +135,7 @@ class DepthSearch:
                         title = titles[i] if i < len(titles) else None
 
                         output = f"{ConsoleConfig.BOLD}{Fore.LIGHTGREEN_EX}URL:{Fore.WHITE} {url}\n"
-                        if title:  # Only print if title is available
+                        if title:  
                             output += f"\t{ConsoleConfig.BOLD}Title:{Fore.LIGHTBLUE_EX} {title}\n"
                         output += ConsoleConfig.END
                         print(output)
