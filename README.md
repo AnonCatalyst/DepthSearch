@@ -2,6 +2,10 @@
 
 DepthSearch is a powerful OSINT tool designed for conducting deep web searches. It enables users to search for specific keywords or strings across deep web search engines, providing detailed results with URLs, titles, and descriptions. The tool is built to support proxy rotation for enhanced anonymity and integrates system information retrieval to offer insights into the running environment.
 
+**NOTE**:
+- ``Integrating with Ominis-OSINT``
+- ``Further updates in discussion``
+
 ## Features
 
 - **Deep Web Search**: Query deep web search engines and retrieve results with URLs and titles.
